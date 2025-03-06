@@ -1,0 +1,76 @@
+
+PUT /cars/1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+    "name": "McLaren",
+    "year": 1992
+}
+
+# HTTP/1.1 201 Created
+# Location: /cars/1
+###
+
+GET /cars/1
+Host: localhost:3000
+
+# HTTP/1.1 200 OK
+# Content-Type: application/json
+# 
+# {
+#   "name": "McLaren",
+#   "year": 1992,
+#   "id": 1
+# }
+###
+
+PUT /cars/2
+Host: localhost:3000
+Content-Type: application/json
+
+{
+    "id": 7,
+    "name": "Ferrari",
+    "year": 2024
+}
+
+# HTTP/1.1 201 Created
+# Location: /cars/2
+###
+
+GET /cars/2
+Host: localhost:3000
+
+# HTTP/1.1 200 OK
+# Content-Type: application/json
+# 
+# {
+#   "id": 2,
+#   "name": "Ferrari",
+#   "year": 2024
+# }
+###
+
+GET /
+Host: localhost:3000
+
+# HTTP/1.1 200 OK
+# Content-Type: text/html
+# 
+# <!DOCTYPE html>
+###
+
+GET /index.js
+Host: localhost:3000
+
+# HTTP/1.1 200 OK
+# Content-Type: text/javascript
+###
+
+HEAD /favicon.ico 
+Host: localhost:3000
+
+# HTTP/1.1 200 OK
+# Content-Type: image/x-icon
+###
