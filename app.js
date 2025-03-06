@@ -6,7 +6,7 @@ import { readFile, readdir, writeFile } from 'node:fs/promises'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-const PORT = 3000
+const PORT = 10000
 
 const app = express()
 app.set('view engine', 'ejs')
