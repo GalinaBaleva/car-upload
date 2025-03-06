@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of all cars</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            margin: 0 auto;
+            padding: 1em;
+            padding-top: 10%;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        p {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            margin-inline: auto;
+            padding: 0;
+            max-width: 4em;
+            text-align: center;
+        }
+
+        li:nth-child(even) {
+            background-color: white;
+        }
+
+        li:nth-child(odd) {
+            background-color: #ddd;
+        }
+
+        li:hover {
+            color: white;
+            background-color: #eee;
+        }
+
+        .wrapper {
+            background-color: white;
+            max-width: 30em;
+            padding: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>JSON in HTML tabele</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+            </tr>
+            <% carsI.forEach(info=> { %>
+                <tr>
+                    <td>
+                        <%= info[0] %>
+                    </td>
+                    <td>
+                        <%= info[1]%>
+                    </td>
+                </tr>
+                <% }) %>
+        </table>
+    </div>
+</body>
+
+</html>

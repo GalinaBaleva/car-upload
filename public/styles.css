@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+  padding: 1em;
+  background-color: lightgray;
+  background-image: url(campbell-3ZUsNJhi_Ik-unsplash.jpg);
+  max-width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+input, button, input[type="file"]::file-selector-button {
+  font-size: inherit;
+}
+
+button {
+  display: block;
+  margin-left: 0;
+  margin-top: 1.5em;
+  min-width: 5em;
+  background-color: white;
+  padding: 0.3em;
+  border-radius: 0.9em;
+  border: none;
+}
+
+label {
+  display: block;
+  margin: 0.5em 0;
+}
+
+form {
+max-width: 20%;
+  margin-inline: auto;
+  position: relative;
+  padding-top: 5%
+}
+
+fieldset {
+  width: 100%;
+  border-radius: 0.5em;
+  background-color: whitesmoke;
+  background-color: transparent;
+  min-inline-size: 0;
+  max-inline-size: 17em;
+  margin-inline: auto;
+  position: relative;
+}
+
+.wrapper{
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em; 
+}
+
+.wrapper::after{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-color: rgb(234, 232, 232);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input{
+  /* background-color: inherit; */
+  border-radius: 0.7em;
+  padding: 0.2em;
+  /* color: white; */
+  border: none;
+}
+
+input[type="file"] {
+  margin-top: 1.5em;
+  max-width: 100%;
+}
+
+legend {
+  color: white;
+  background-color: darkslategray;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+}
+
+a {
+  display: block;
+  margin-top: 2em;
+  margin-inline: auto;
+  text-align: center;
+  color: white;
+}
+
