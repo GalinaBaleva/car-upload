@@ -1,8 +1,9 @@
 import express from 'express'
+import helmet from 'helmet'
 import morgan from 'morgan'
 import { readFile, readdir, writeFile } from 'node:fs/promises'
 
-const PORT = 3000
+const PORT = process.env.PORT
 
 const logFormat = `
 time    :date[web]
@@ -19,7 +20,8 @@ app.use(
     express.json(),
     express.urlencoded({ extended: false }),
     express.static('public'),
-    morgan(logFormat)
+    morgan(logFormat),
+    // helmet()
 )
 
 
