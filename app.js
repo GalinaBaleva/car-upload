@@ -35,7 +35,7 @@ app.post('/cars/:id', async (req, res) => {
     await writeFile('cars/' + id, JSON.stringify(body, null, 2))
 
     // res.status(201).location(`/cars/${id}`).end()
-    res.send({id})
+    res.send({"id": id})
 })
 
 app.get('/cars/:id', async (req, res) => {
