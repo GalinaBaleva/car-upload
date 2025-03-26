@@ -1,21 +1,8 @@
 import express from 'express'
 import morgan from 'morgan'
-import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { readFile, readdir, writeFile } from 'node:fs/promises'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
-
 const PORT = 3000
-
-const app = express()
-app.set('view engine', 'ejs')
-
-app.use(
-    express.json(),
-    express.urlencoded({ extended: false }),
-    express.static('public')
-)
 
 const logFormat = `
 time    :date[web]
@@ -25,7 +12,19 @@ url     :url
 status  :status 
 --------------------------------------------------`
 
-app.put('/cars/:id', async (req, res) => {
+const app = express()
+app.set('view engine', 'ejs')
+
+app.use(
+    express.json(),
+    express.urlencoded({ extended: false }),
+    express.static('public'),
+    morgan(logFormat)
+)
+
+
+
+app.post('/cars/:id', async (req, res) => {
     const path = req.path.split('/')
     const id = path[path.length - 1]
     const body = req.body

@@ -13,7 +13,7 @@ async function onSubmit(e) {
 
     const id = fileid.value
 
-    const resp = await fetch('/cars/' + id, { method: 'PUT', body: file })
+    const resp = await fetch('/cars/' + id, { method: 'POST', body: file })
     console.log(resp.headers.get('location'))
     if (resp.status === 201) {
         form.reset()
