@@ -16,7 +16,7 @@ async function onSubmit(e) {
         const carId = await resp.json()
         form.reset()
         
-        window.location.href = `/cars/${carId}`
+        window.location.href = `/cars/${carId.id}`
     }
 
 }
