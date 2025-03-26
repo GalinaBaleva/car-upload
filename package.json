@@ -1,11 +1,13 @@
 {
     "type": "module",
     "scripts": {
-        "start": "nodemon app.js"
+        "start": "node app.js",
+        "mon": "nodemon -r dotenv/config server.js"
     },
     "dependencies": {
         "ejs": "^3.1.10",
         "express": "^4.21.2",
+        "helmet": "^8.1.0",
         "morgan": "^1.10.0"
     },
     "devDependencies": {
