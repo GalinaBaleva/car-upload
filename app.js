@@ -21,7 +21,7 @@ app.use(
     express.urlencoded({ extended: false }),
     express.static('public'),
     morgan(logFormat),
-    // helmet()
+    helmet()
 )
 
 
