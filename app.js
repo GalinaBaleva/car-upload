@@ -4,6 +4,7 @@ import morgan from 'morgan'
 import { readFile, readdir, writeFile } from 'node:fs/promises'
 
 const PORT = process.env.PORT
+const app = express()
 
 const logFormat = `
 time    :date[web]
@@ -13,7 +14,6 @@ url     :url
 status  :status 
 --------------------------------------------------`
 
-const app = express()
 app.set('view engine', 'ejs')
 
 app.use(
@@ -34,7 +34,8 @@ app.post('/cars/:id', async (req, res) => {
 
     await writeFile('cars/' + id, JSON.stringify(body, null, 2))
 
-    res.status(201).location(`/cars/${id}`).end()
+    // res.status(201).location(`/cars/${id}`).end()
+    res.send({id})
 })
 
 app.get('/cars/:id', async (req, res) => {

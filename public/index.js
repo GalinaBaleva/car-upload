@@ -14,8 +14,9 @@ async function onSubmit(e) {
     const id = fileid.value
 
     const resp = await fetch('/cars/' + id, { method: 'POST', body: file })
-    console.log(resp.headers.get('location'))
+    // console.log(resp.headers.get('location'))
     if (resp.status === 201) {
+        console.log(await resp.json())
         form.reset()
 
         window.location.href = resp.url
